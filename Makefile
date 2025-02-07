@@ -6,7 +6,7 @@
 #    By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/02 19:42:34 by fpedraza          #+#    #+#              #
-#    Updated: 2025/02/02 19:54:26 by fpedraza         ###   ########.fr        #
+#    Updated: 2025/02/07 10:15:22 by fpedraza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,11 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-# Compile libft rule
+norm:
+				@echo "[$(GREEN) Norminette $(WHITE)]"
+				@python3 -m norminette 2>/dev/null | grep -v "OK\!" || true
+
+# Compile libft rulec
 libft: $(LIBFT)
 
-.PHONY:			all clean fclean re MSG start
+.PHONY:			all clean fclean re MSG start norm
