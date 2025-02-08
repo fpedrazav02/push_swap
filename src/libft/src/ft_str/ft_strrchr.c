@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 19:40:18 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/08 16:06:59 by fpedraza         ###   ########.fr       */
+/*   Created: 2022/03/22 21:05:32 by fpedraza          #+#    #+#             */
+/*   Updated: 2025/02/07 12:09:36 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../inc/libft.h"
 
-# include <unistd.h>
+char	*ft_strrchr(const char *str, int c)
+{
+	int	i;
 
-// * Own libs
-# include "../src/libft/inc/ft_printf.h"
-# include "../src/libft/inc/libft.h"
-# include "../src/libft/inc/get_next_line.h"
-
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	while (i >= 0)
+	{
+		if (str[i] == (char)c)
+			return ((char *)(str + i));
+		i--;
+	}
+	return (NULL);
+}
+// int main () {
+//    const char str[] = "http://www.tutorialspoint.com";s
+//    ft_strrchr(str, '.');
+//    printf("%s",ft_strrchr(str, '.'));
+//    return(0);
+// }

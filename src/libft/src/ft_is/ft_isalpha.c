@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 19:40:18 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/08 16:06:59 by fpedraza         ###   ########.fr       */
+/*   Created: 2022/03/22 20:38:00 by fpedraza          #+#    #+#             */
+/*   Updated: 2025/02/07 12:09:36 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../inc/libft.h"
 
-# include <unistd.h>
+int	ft_isalpha(int c)
+{
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+// int main ()
+// {
+//     char letra;
 
-// * Own libs
-# include "../src/libft/inc/ft_printf.h"
-# include "../src/libft/inc/libft.h"
-# include "../src/libft/inc/get_next_line.h"
-
-#endif
+//     letra = 'm';
+//     printf("%i\n", ft_isalpha(letra));
+//     return (0);
+// }

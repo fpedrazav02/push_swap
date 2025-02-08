@@ -55,3 +55,8 @@ dkms.conf
 es.subject.pdf
 .DS_STORE
 bin/
+.vscode
+
+# Objects and binaries
+bin/
+build/

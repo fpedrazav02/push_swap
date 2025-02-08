@@ -6,7 +6,7 @@
 #    By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/02 19:42:34 by fpedraza          #+#    #+#              #
-#    Updated: 2025/02/07 10:15:22 by fpedraza         ###   ########.fr        #
+#    Updated: 2025/02/08 16:12:44 by fpedraza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ all: $(NAME)
 $(NAME): $(LIBFT) MSG $(OBJS)
 				@mkdir -p $(BIN_DIR)
 				@echo "\nBuilding [$(GREEN)$(NAME)$(WHITE)]\n"
-				@$(CC) $(CC_FLAGS) $(LIBFT) -o $(BINARIES) $(OBJS)
+				@$(CC) $(CC_FLAGS) -o $(BINARIES) $(OBJS) $(LIBFT)
 				@echo "\n... ✅ Everything compiled successfully ✅ ...\n"
 
 MSG:
