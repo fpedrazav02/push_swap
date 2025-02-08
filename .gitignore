@@ -60,3 +60,4 @@ bin/
 # Objects and binaries
 bin/
 build/
+binaries/
