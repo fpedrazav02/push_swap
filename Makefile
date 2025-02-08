@@ -6,13 +6,16 @@
 #    By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/02 19:42:34 by fpedraza          #+#    #+#              #
-#    Updated: 2025/02/08 16:12:44 by fpedraza         ###   ########.fr        #
+#    Updated: 2025/02/08 18:47:55 by fpedraza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # * Variables
-SRCS			=	main.c
+PUSH_DIR		=	push
+PUSH_ITEMS		=	$(addprefix src/$(PUSH_DIR)/, utils.c)
+SRCS			=	main.c $(PUSH_ITEMS)
 OBJS_DIR		=	obj
+OBJS_PUSH_DIR	=	obj/src/push
 OBJS 			=	$(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 BIN_DIR			=	bin
 BIN				=	$(addprefix $(BIN_DIR)/, "push_swap")
@@ -52,7 +55,7 @@ $(LIBFT):
 
 # [GENERIC] Compile all .c files into .o files
 $(OBJS_DIR)/%.o: %.c
-				@mkdir -p $(OBJS_DIR)
+				@mkdir -p $(OBJS_DIR) $(OBJS_PUSH_DIR)
 				@echo "Compiling object $< -> [$(CYAN)$@$(WHITE)]"
 				@$(CC) $(CC_FLAGS) -c $< -o $@
 

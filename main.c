@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 19:41:53 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/08 16:10:31 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/08 18:55:52 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 int	main(int argc, char **argv)
 {
-	(void)argv;
-	(void)argc;
-	ft_printf("hola\n");
+
+	if (!validate_params(argc, argv))
+	{
+		return (0);
+	}
+
+
+
+	ft_printf("constrains passed correctly...! \n");
 	return (0);
 }
