@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 15:06:01 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/08 15:55:57 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/09 19:33:17 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t len);
 
 void	*ft_memset(void *s, int c, size_t n);
+
+void	ft_free_array(void **array);
 
 char	*ft_strchr(const char *str, int c);
 

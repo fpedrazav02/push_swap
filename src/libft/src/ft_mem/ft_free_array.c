@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 19:41:53 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/09 19:24:46 by fpedraza         ###   ########.fr       */
+/*   Created: 2025/02/09 19:30:16 by fpedraza          #+#    #+#             */
+/*   Updated: 2025/02/09 19:33:15 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "../../inc/libft.h"
 
-int	main(int argc, char **argv)
+void	ft_free_array(void **array)
 {
-	t_stack	*a;
-	t_stack	*b;
+	int	i;
 
-	a = NULL;
-	b = NULL;
-	(void)a;
-	(void)b;
-	if (!validate_params(argc, argv))
+	if (!array)
 	{
-		return (0);
+		return ;
 	}
-	//Fill stack A;
-	fill_stack(a, argv, argc);
-
-	ft_printf("\n...Constrains passed correctly...✅ \n");
-	system ("leaks push_swap");
-	return (0);
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }

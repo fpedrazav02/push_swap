@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 16:40:31 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/09 20:09:45 by fpedraza         ###   ########.fr       */
+/*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
+/*   Updated: 2025/02/09 20:15:27 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,19 @@
 #include "../libft/inc/get_next_line.h"
 #include "../../inc/push_swap.h"
 
-int	is_valid(char *n);
-
-int	validate_params(int argc, char **argv)
+void	ft_free_stack(t_stack *head)
 {
-	char	**i;
+	t_stack	*node;
 
-	if (argc == 1)
+	while (head != NULL)
 	{
-		return (0);
+		node = head;
+		head = head->next;
+		free(node);
 	}
-	if (argc > 2)
-	{
-		if (argv[1] == NULL)
-		{
-			return (0);
-		}
-		i = ++argv;
-		while (*i)
-		{
-			if (!is_valid(*i))
-			{
-				ft_printf("\033[91mError\033[0m\n");
-				return (0);
-			}
-			i++;
-		}
-	}
-	return (1);
 }
 
-int	is_valid(char *n)
-{
-	int	value;
+// void	ft_print_stack(t_stack *head)
+// {
 
-	value = ft_atoi(n);
-	if (value == -1 || ((value == 0) && ft_strncmp(n, "0", 1)))
-	{
-		return (0);
-	}
-	return (1);
-}
+// }

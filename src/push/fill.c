@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   fill.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 16:40:31 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/09 20:09:45 by fpedraza         ###   ########.fr       */
+/*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
+/*   Updated: 2025/02/09 20:09:30 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,31 @@
 #include "../libft/inc/get_next_line.h"
 #include "../../inc/push_swap.h"
 
-int	is_valid(char *n);
-
-int	validate_params(int argc, char **argv)
+t_stack	*fill_stack(t_stack *stack, char **argv, int argc)
 {
-	char	**i;
+	char	**args;
+	char	**f;
 
-	if (argc == 1)
+	if (argc == 2)
 	{
-		return (0);
-	}
-	if (argc > 2)
-	{
-		if (argv[1] == NULL)
+
+		args = ft_split(argv[1], ' ');
+		f = args;
+		if (args == NULL)
 		{
-			return (0);
+			return (stack);
 		}
-		i = ++argv;
-		while (*i)
+		while (*args)
 		{
-			if (!is_valid(*i))
-			{
-				ft_printf("\033[91mError\033[0m\n");
-				return (0);
-			}
-			i++;
+			ft_printf("Number: [%s]\n", *args);
+			args++;
 		}
+		ft_free_array((void **)f);
 	}
-	return (1);
-}
-
-int	is_valid(char *n)
-{
-	int	value;
-
-	value = ft_atoi(n);
-	if (value == -1 || ((value == 0) && ft_strncmp(n, "0", 1)))
+	else
 	{
-		return (0);
+		ft_printf("More than 2 args where provided\n");
 	}
-	return (1);
+
+	return (stack);
 }

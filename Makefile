@@ -6,13 +6,17 @@
 #    By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/02 19:42:34 by fpedraza          #+#    #+#              #
-#    Updated: 2025/02/08 18:47:55 by fpedraza         ###   ########.fr        #
+#    Updated: 2025/02/09 20:10:24 by fpedraza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # * Variables
 PUSH_DIR		=	push
-PUSH_ITEMS		=	$(addprefix src/$(PUSH_DIR)/, utils.c)
+PUSH_ITEMS		=	$(addprefix src/$(PUSH_DIR)/, utils.c) \
+					$(addprefix src/$(PUSH_DIR)/, fill.c) \
+					$(addprefix src/$(PUSH_DIR)/, lst.c) \
+					$(addprefix src/$(PUSH_DIR)/, stack.c)
+
 SRCS			=	main.c $(PUSH_ITEMS)
 OBJS_DIR		=	obj
 OBJS_PUSH_DIR	=	obj/src/push
@@ -42,7 +46,7 @@ all: $(NAME)
 $(NAME): $(LIBFT) MSG $(OBJS)
 				@mkdir -p $(BIN_DIR)
 				@echo "\nBuilding [$(GREEN)$(NAME)$(WHITE)]\n"
-				@$(CC) $(CC_FLAGS) -o $(BINARIES) $(OBJS) $(LIBFT)
+				@$(CC) $(CC_FLAGS) -g -o $(BINARIES) $(OBJS) $(LIBFT)
 				@echo "\n... ✅ Everything compiled successfully ✅ ...\n"
 
 MSG:
