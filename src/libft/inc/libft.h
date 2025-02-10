@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 15:06:01 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/10 17:31:42 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/10 19:01:14 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct s_list
 {
-	void			*content;
+	void			*value;
 	struct s_list	*next;
 }	t_list;
 
@@ -112,7 +112,7 @@ t_list	*ft_lstlast(t_list *root);
 
 t_list	*ft_lstmap(t_list *node, void *(*f)(void *), void (*del)(void *));
 
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(void *value);
 
 int		ft_lstsize(t_list *lst);
 

@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *node, void (*del)(void*))
 {
-	(del)(node->content);
+	(del)(node->value);
 	free(node);
 }
 

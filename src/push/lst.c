@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/10 17:46:18 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/10 19:28:00 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,30 @@ t_stack	*ft_newnode(char	*value)
 	return (node);
 }
 
-int	ft_lst_append(t_stack	**list, t_stack	*node)
+int	ft_lst_append(t_stack **list, t_stack *node)
 {
 	t_stack	*head;
 
-	head = *list;
+	if (!list || !node)
+		return (0);
+
 	if (*list == NULL)
 	{
 		*list = node;
 		return (1);
 	}
+
+	head = *list;
 	while (head->next != NULL)
 	{
-		if (head->value != node->value)
-		{
-			head = head->next;
-		}
-		else
-		{
+		if (head->value == node->value)
 			return (0);
-		}
+		head = head->next;
 	}
+
+	if (head->value == node->value)
+		return (0);
+
 	head->next = node;
 	return (1);
 }
