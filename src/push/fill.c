@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/10 20:43:33 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:49:28 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ t_stack	*fill_stack(t_stack **stack, char **argv, int argc)
 	else
 	{
 		ft_printf("More than 2 args were provided\n");
+		args = ++argv;
+		while(*args)
+		{
+			ft_printf("\nArg: (%s)\n", *args);
+			args++;
+		}
 	}
 
 	return (*stack);
