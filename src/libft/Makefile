@@ -18,6 +18,7 @@ FTMEM_DIR		=	$(SRC_DIR)ft_mem/ft_bzero.c \
 					$(SRC_DIR)ft_mem/ft_memcpy.c \
 					$(SRC_DIR)ft_mem/ft_memmove.c \
 					$(SRC_DIR)ft_mem/ft_free_array.c \
+					$(SRC_DIR)ft_mem/ft_free_list.c \
 					$(SRC_DIR)ft_mem/ft_memset.c
 
 FTPUT_DIR		=	$(SRC_DIR)ft_put/ft_putchar_fd.c \

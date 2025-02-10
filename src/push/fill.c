@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/09 20:09:30 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:50:43 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,19 @@ t_stack	*fill_stack(t_stack *stack, char **argv, int argc)
 		while (*args)
 		{
 			ft_printf("Number: [%s]\n", *args);
-			args++;
+			//Create node
+			t_stack *new_node = ft_newnode(*args);
+			int check = ft_lst_append(&stack, new_node);
+			if (check)
+				args++;
+			else
+			{
+				ft_free_list(stack, free);
+				return (0);
+			}
 		}
 		ft_free_array((void **)f);
+		ft_free_list(stack, free);
 	}
 	else
 	{
