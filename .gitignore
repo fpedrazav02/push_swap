@@ -61,3 +61,6 @@ bin/
 bin/
 build/
 binaries/
+
+#Python
+.venv/
