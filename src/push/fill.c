@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/10 20:49:28 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/11 10:15:11 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_stack	*fill_stack(t_stack **stack, char **argv, int argc)
 {
 	char	**args;
 	char	**f;
+	int		check;
+	t_stack *new_node;
 
 	if (argc == 2)
 	{
@@ -29,8 +31,8 @@ t_stack	*fill_stack(t_stack **stack, char **argv, int argc)
 		f = args;
 		while (*args)
 		{
-			t_stack *new_node = ft_newnode(*args);
-			int check = ft_lst_append(stack, new_node);
+			new_node = ft_newnode(*args);
+			check = ft_lst_append(stack, new_node);
 			if (check)
 				args++;
 			else
@@ -52,8 +54,17 @@ t_stack	*fill_stack(t_stack **stack, char **argv, int argc)
 		args = ++argv;
 		while(*args)
 		{
-			ft_printf("\nArg: (%s)\n", *args);
-			args++;
+			new_node = ft_newnode(*args);
+			check = ft_lst_append(stack, new_node);
+			if (check)
+				args++;
+			else
+			{
+				free(new_node);
+				ft_free_list(*stack, free);
+				ft_printf("\033[91mError\033[0m\n");
+				return (0);
+			}
 		}
 	}
 
