@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 19:40:18 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/10 19:36:02 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/12 22:01:03 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,7 @@ t_stack	*fill_stack(t_stack **stack, char **argv, int argc);
 t_stack	*ft_newnode(char	*value);
 int		ft_lst_append(t_stack	**list, t_stack	*node);
 void	ft_print_stack(t_stack	*head);
+
+//Operations
+
 #endif
