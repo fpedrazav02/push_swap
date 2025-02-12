@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/11 10:15:11 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/12 19:55:57 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,58 +15,58 @@
 #include "../libft/inc/get_next_line.h"
 #include "../../inc/push_swap.h"
 
+int	append_args_to_list(t_stack **stack, char **args);
+
 t_stack	*fill_stack(t_stack **stack, char **argv, int argc)
 {
 	char	**args;
-	char	**f;
+	char	**farray;
 	int		check;
-	t_stack *new_node;
 
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], ' ');
 		if (!args)
 			return (*stack);
-
-		f = args;
-		while (*args)
+		farray = args;
+		check = append_args_to_list(stack, args);
+		if (!check)
 		{
-			new_node = ft_newnode(*args);
-			check = ft_lst_append(stack, new_node);
-			if (check)
-				args++;
-			else
-			{
-				free(new_node);
-				ft_free_list(*stack, free);
-				ft_free_array((void **)f);
-				ft_printf("\033[91mError\033[0m\n");
-				return (0);
-			}
+			ft_free_array((void **)farray);
+			return (0);
 		}
-
-		ft_print_stack(*stack);
-		ft_free_array((void **)f);
+		ft_free_array((void **)farray);
 	}
 	else
 	{
-		ft_printf("More than 2 args were provided\n");
 		args = ++argv;
-		while(*args)
-		{
-			new_node = ft_newnode(*args);
-			check = ft_lst_append(stack, new_node);
-			if (check)
-				args++;
-			else
-			{
-				free(new_node);
-				ft_free_list(*stack, free);
-				ft_printf("\033[91mError\033[0m\n");
-				return (0);
-			}
-		}
+		check = append_args_to_list(stack, args);
+		if (!check)
+			return (0);
 	}
 
 	return (*stack);
+}
+
+int	append_args_to_list(t_stack **stack, char **args)
+{
+	t_stack	*new_node;
+	int		check;
+
+	while (*args)
+	{
+		new_node = ft_newnode(*args);
+		check = ft_lst_append(stack, new_node);
+		if (check)
+			args++;
+		else
+		{
+			free(new_node);
+			ft_free_list(*stack, free);
+			ft_printf("\033[91mError\033[0m\n");
+			return (0);
+		}
+	}
+
+	return (1);
 }
