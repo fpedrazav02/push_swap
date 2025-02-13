@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 19:03:49 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/10 19:27:56 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:06:16 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,17 @@ void	ft_print_stack(t_stack	*head)
 	ft_printf("\n _____________LIST PRINT END____________\n");
 
 }
+
+t_stack	*ft_stacklast(t_stack *root)
+{
+	if (root == NULL)
+		return (NULL);
+	while (root != NULL)
+	{
+		if (root->next == NULL)
+			return (root);
+		root = root->next;
+	}
+	return (root);
+}
+

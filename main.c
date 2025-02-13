@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 19:41:53 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/13 10:43:48 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:05:55 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int	main(int argc, char **argv)
 		system ("leaks push_swap");
 		return (0);
 	}
-
+	ft_print_stack(a);
+	ft_sa(&a);
+	ft_print_stack(a);
 	ft_free_list(a, free);
 	system ("leaks push_swap");
 	return (0);
