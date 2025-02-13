@@ -64,3 +64,6 @@ binaries/
 
 #Python
 .venv/
+
+# Checker
+checker_Mac

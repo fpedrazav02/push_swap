@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 22:00:18 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/12 22:05:24 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:06:29 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,8 @@ ra rotate a: Desplaza hacia arriba todos los elementos del stack a una posición
 de forma que el primer elemento se convierte en el último
 */
 
+
+/*
+rra reverse rotate a: Desplaza hacia abajo todos los elementos del stack a una
+posición, de forma que el último elemento se convierte en el primero.
+*/
