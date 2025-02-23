@@ -6,7 +6,7 @@
 /*   By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 19:40:18 by fpedraza          #+#    #+#             */
-/*   Updated: 2025/02/13 13:37:38 by fpedraza         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:21:54 by fpedraza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 int		validate_params(int argc, char **argv);
 int		ft_lst_append(t_stack	**list, t_stack	*node);
 void	ft_print_stack(t_stack	*head);
+int		ft_list_lenght(t_stack	*head);
 t_stack	*fill_stack(t_stack **stack, char **argv, int argc);
 t_stack	*ft_newnode(char	*value);
 t_stack	*ft_stacklast(t_stack *root);
@@ -51,6 +52,7 @@ void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
 
 //Prototypes for algorithm
+void	sort(t_stack **a, t_stack **b);
 
 //Operations
 

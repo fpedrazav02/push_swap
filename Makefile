@@ -6,7 +6,7 @@
 #    By: fpedraza <fpedraza@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/02 19:42:34 by fpedraza          #+#    #+#              #
-#    Updated: 2025/02/13 10:41:31 by fpedraza         ###   ########.fr        #
+#    Updated: 2025/02/23 17:43:58 by fpedraza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ PUSH_DIR		=	push
 PUSH_ITEMS		=	$(addprefix src/$(PUSH_DIR)/, utils.c) \
 					$(addprefix src/$(PUSH_DIR)/, fill.c) \
 					$(addprefix src/$(PUSH_DIR)/, lst.c) \
-					$(addprefix src/$(PUSH_DIR)/, stack.c) \
+					$(addprefix src/$(PUSH_DIR)/, sort.c) \
 					$(addprefix src/$(PUSH_DIR)/, operations_a.c) \
 					$(addprefix src/$(PUSH_DIR)/, operations_b.c) \
 					$(addprefix src/$(PUSH_DIR)/, operations_both.c) \
